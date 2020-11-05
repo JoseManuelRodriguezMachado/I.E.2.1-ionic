@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Llamadas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let contacto of contactos" [routerLink]="['/contactos', contacto.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="contacto.imagenURL"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2><b>{{contacto.title}}</b></h2>
+        {{contacto.comment}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
